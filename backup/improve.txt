@@ -1,0 +1,169 @@
+
+menjadi perintah comand :
+
+- buat folder spesifik
+- buat files spesifik 
+- rename folder spesifik
+- rename files spesifik
+
+
+improve kode selain comand ada perintah lebih diatas selain ini PS C:\Users\myaasiinh\Vscode\test_flutter_generator_structure> flutter pub global run flutter_structure_generator authentication
+
+
+import 'dart:io';
+
+/// Membuat file dengan konten opsional.
+void createFile(String path, [String content = '']) {
+  final file = File(path);
+
+  if (!file.existsSync()) {
+    file.createSync(recursive: true);
+    if (content.isNotEmpty) {
+      file.writeAsStringSync(content);
+    }
+    print('File created: $path');
+  } else {
+    print('File already exists: $path');
+  }
+}
+
+/// Menghasilkan file berdasarkan struktur folder.
+void generateFiles(Map<String, dynamic> structure, String basePath) {
+  structure.forEach((key, value) {
+    final path = '$basePath/$key';
+
+    if (value is Map<String, dynamic>) {
+      Directory(path).createSync(recursive: true);
+      generateFiles(value, path);
+    } else if (value is List<String>) {
+      value.forEach((fileName) {
+        createFile('$path/$fileName');
+      });
+    }
+  });
+}
+import 'dart:io';
+
+void createFolders(Map<String, dynamic> structure, String basePath) {
+  structure.forEach((key, value) {
+    final path = '$basePath/$key';
+    Directory(path).createSync(recursive: true);
+
+    if (value is Map<String, dynamic>) {
+      createFolders(value, path);
+    } else if (value is List<String>) {
+      value.forEach((fileName) {
+        File('$path/$fileName').createSync(recursive: true);
+      });
+    }
+  });
+}
+import 'dart:io';
+
+/// Membuat folder jika belum ada.
+void createFolderIfNotExists(String folderPath) {
+  final directory = Directory(folderPath);
+  if (!directory.existsSync()) {
+    directory.createSync(recursive: true);
+    print('Folder created: $folderPath');
+  } else {
+    print('Folder already exists: $folderPath');
+  }
+}
+
+/// Membuat file jika belum ada.
+void createFileIfNotExists(String filePath, [String content = '']) {
+  final file = File(filePath);
+  if (!file.existsSync()) {
+    file.createSync(recursive: true);
+    if (content.isNotEmpty) {
+      file.writeAsStringSync(content);
+    }
+    print('File created: $filePath');
+  } else {
+    print('File already exists: $filePath');
+  }
+}
+
+/// Menghapus file jika ada.
+void deleteFileIfExists(String filePath) {
+  final file = File(filePath);
+  if (file.existsSync()) {
+    file.deleteSync();
+    print('File deleted: $filePath');
+  } else {
+    print('File does not exist: $filePath');
+  }
+}
+
+/// Menghapus folder jika ada.
+void deleteFolderIfExists(String folderPath) {
+  final directory = Directory(folderPath);
+  if (directory.existsSync()) {
+    directory.deleteSync(recursive: true);
+    print('Folder deleted: $folderPath');
+  } else {
+    print('Folder does not exist: $folderPath');
+  }
+}
+final Map<String, dynamic> defaultStructure = {
+  'lib': {
+    'core': {
+      'config': ['main_app.dart'],
+      'global_component': ['global_widget.dart'],
+      'constants': ['string.dart', 'color.dart', 'images.dart'],
+      'utils': ['route_utils.dart'],
+    },
+    'data': {
+      'data1': {
+        'requests_model': ['data1_requests_model.dart'],
+        'responses_model': ['data1_responses_model.dart'],
+        'datasource': ['data1_data_source.dart'],
+        'repository': ['data1_repository.dart'],
+        'viewdatamodel': ['data1_view_datamodel.dart'],
+      },
+    },
+    'features': {
+      'features1': {
+        '': ['features_screen.dart'],
+        'widget': ['features1_widget.dart'],
+        'controller': ['features_controller.dart'],
+      },
+    },
+  },
+};
+export 'src/config/structure_config.dart';
+export 'src/generators/folder_generator.dart';
+export 'src/generators/file_generator.dart';
+export 'src/utils/file_utils.dart';
+import 'dart:io';
+import 'package:flutter_structure_generator/flutter_structure_generator.dart';
+
+void main(List<String> arguments) {
+  final basePath = Directory.current.path;
+
+  print('Generating default structure...');
+
+  // Create folders based on the default structure
+  createFolders(defaultStructure, basePath);
+  
+  // Generate files based on the default structure (optional, if you want to create files too)
+  generateFiles(defaultStructure, basePath);
+
+  print('Structure generated successfully at $basePath!');
+}
+flutter_structure_generator/
+├── bin/
+│   └── flutter_structure_generator.dart
+├── lib/
+│   ├── flutter_structure_generator.dart
+│   └── src/
+│       ├── config/
+│       │   └── structure_config.dart
+│       ├── utils/
+│       │   └── file_utils.dart
+│       ├── generators/
+│       │   ├── folder_generator.dart
+│       │   └── file_generator.dart
+├── test/
+└── pubspec.yaml
