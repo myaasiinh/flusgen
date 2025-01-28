@@ -1,0 +1,15 @@
+flutter_structure_generator/
+├── bin/
+│   └── flutter_structure_generator.dart
+├── lib/
+│   ├── flutter_structure_generator.dart
+│   └── src/
+│       ├── config/
+│       │   └── structure_config.dart
+│       ├── utils/
+│       │   └── file_utils.dart
+│       ├── generators/
+│       │   ├── folder_generator.dart
+│       │   └── file_generator.dart
+├── test/
+└── pubspec.yaml

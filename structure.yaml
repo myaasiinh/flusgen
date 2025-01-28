@@ -1,0 +1,23 @@
+core:
+  - config/main_app.dart
+  - global_component/global_widget.dart
+  - constants/string.dart
+  - constants/color.dart
+  - constants/images.dart
+  - utils/route_utils.dart
+
+data:
+  $featureName: # Variabel dinamis
+    - requests_model/$featureName_requests_model.dart
+    - responses_model/$featureName_responses_model.dart
+    - datasource/$featureName_data_source.dart
+    - repository/$featureName_repository.dart
+    - viewdatamodel/$featureName_view_datamodel.dart
+
+features:
+  $featureName: # Variabel dinamis
+    - $featureName_screen.dart
+    - widget/$featureName_widget.dart
+    - controller/$featureName_controller.dart
+
+
