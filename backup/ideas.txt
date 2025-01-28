@@ -1,0 +1,40 @@
+bisakah kita membuat tools generator structure cmd untuk dipake di flutter untuk buat folder dan file otomatis seperti laravel? dengan struktur seperti ini misal :
+dengan struktur seperti ini misal seperti ini dimana setiap folder struktur bisa dibuat dan dikustomisasi kembali nama folder serta file dan ditambahkan lagi menjadi library di pub dev seperti mellos:
+
+lib/
+  core/
+    - config/
+      - main_app.dart
+    - global_component/
+        - global_widget.dart
+    - constants/
+        - string.dart
+        - color.dart
+        - images.dart
+    - utils/
+      - route_utils.dart
+
+  data/
+    - data1/
+      - requests_model/
+            - data1_requests_model.dart
+      - responses_model/
+            - data1_responses_model.dart
+      - datasource/
+            - data1_data_source.dart
+      - repository/
+            - data1_repository.dart
+      - viewdatamodel/
+            - data1_view_datamodel.dart
+    bisa tambah folder data lagi dan seterusnya
+
+   
+  features/
+    - features1/
+      - features_screen.dart
+      - widget/
+            - features1_widget.dart
+      - controller/
+            - features_controller.dart
+
+     - bisa tambah folder features lagi dan seterusnya

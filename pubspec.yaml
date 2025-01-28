@@ -1,7 +1,6 @@
 name: flutter_structure_generator
 description: A sample command-line application with basic argument parsing.
 version: 0.0.1
-# repository: https://github.com/my_org/my_repo
 
 environment:
   sdk: ^3.6.0
@@ -9,6 +8,8 @@ environment:
 # Add regular dependencies here.
 dependencies:
   args: ^2.6.0
+  flutter_test:
+    sdk: flutter
   yaml: ^3.1.3
 
 dev_dependencies:
