@@ -1,9 +1,12 @@
 name: flutter_structure_generator
-description: A sample command-line application with basic argument parsing.
+description: A CLI tool for generating folder structures for Flutter projects
 version: 0.0.1
 
 environment:
   sdk: ^3.6.0
+
+executables:
+  flutter_structure_generator: flutter_structure_generator.dart
 
 # Add regular dependencies here.
 dependencies:
