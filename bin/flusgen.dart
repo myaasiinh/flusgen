@@ -1,13 +1,12 @@
 import 'dart:io';
 import 'package:flusgen/flusgen.dart';
 
-
 /// Entry point program.
 void main(List<String> arguments) {
   final basePath = Directory.current.path;
 
   if (arguments.isEmpty) {
-    print('Usage: Provide a command (e.g., generate-structure, create-custom-folder, rename-folder, delete-folder, create-custom-file, rename-file, delete-file).');
+    print('Usage: Provide a command (e.g., generate-structure, generate-structure-from-file, create-custom-folder, rename-folder, delete-folder, create-custom-file, rename-file, delete-file).');
     return;
   }
 
@@ -18,6 +17,15 @@ void main(List<String> arguments) {
       print('Generating default structure...');
       createFolders(defaultStructure, basePath);
       print('Structure generated successfully at $basePath!');
+      break;
+
+    case 'generate-structure-from-file':
+      if (arguments.length < 2) {
+        print('Usage: generate-structure-from-file <filePath>');
+        return;
+      }
+      final filePath = arguments[1];
+      generateStructureFromFile(filePath, basePath);
       break;
 
     case 'create-custom-folder':
@@ -72,7 +80,7 @@ void main(List<String> arguments) {
 
     default:
       print('Unknown command: $command');
-      print('Available commands: generate-structure, create-custom-folder, rename-folder, delete-folder, create-custom-file, rename-file, delete-file');
+      print('Available commands: generate-structure, generate-structure-from-file, create-custom-folder, rename-folder, delete-folder, create-custom-file, rename-file, delete-file');
       break;
   }
 }
