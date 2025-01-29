@@ -10,14 +10,15 @@ This project is designed to simplify the setup of folder and file structures in 
 
 ---  
 
-## ✨ **Key Features**  
+### ✨ **Key Features**  
 - ✅ **Generate Structure**: Automatically create a default folder and file structure based on predefined templates.  
+- ✅ **Generate from File**: Create a custom folder and file structure based on a `.txt` file.  
 - ✅ **Create Custom Folder**: Add custom folders after generating the default structure.  
-- ✅ **Rename Folder**: Rename folders within the project structure.  
+- ✅ **Rename Folder**: Rename existing folders within the project structure.  
 - ✅ **Delete Folder**: Remove folders from the project structure.  
-- ✅ **Create Custom File**: Add custom files after generating the default structure.  
-- ✅ **Rename File**: Rename files within the project structure.  
-- ✅ **Delete File**: Remove files from the project structure.  
+- ✅ **Create Custom File**: Add custom files within the project structure.  
+- ✅ **Rename File**: Rename existing files within the project structure.  
+- ✅ **Delete File**: Remove files from the project structure.
 
 ---  
 

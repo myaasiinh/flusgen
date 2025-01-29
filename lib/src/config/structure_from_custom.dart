@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:flusgen/flusgen.dart';
 
 void generateStructureFromFile(String filePath, String basePath) {
   final file = File(filePath);
@@ -15,12 +14,22 @@ void generateStructureFromFile(String filePath, String basePath) {
     
     if (trimmedLine.isEmpty) continue; // Skip baris kosong
     
+    final fullPath = '$basePath/$trimmedLine';
+
     if (trimmedLine.endsWith('/')) {
-      // Jika diakhiri dengan "/", maka ini adalah folder
-      createCustomFolder('$basePath/$trimmedLine');
+      // If it's a folder, create it
+      final folderPath = fullPath;  // Ensuring proper folder path
+      if (!Directory(folderPath).existsSync()) {
+        Directory(folderPath).createSync();
+        print('Custom folder created: $folderPath');
+      }
     } else {
-      // Jika tidak, maka ini adalah file
-      createCustomFile('$basePath/$trimmedLine', '');
+      // If it's a file, create it
+      final filePath = fullPath; // Ensuring proper file path
+      if (!File(filePath).existsSync()) {
+        File(filePath).createSync(recursive: true);
+        print('Custom file created: $filePath');
+      }
     }
   }
 
