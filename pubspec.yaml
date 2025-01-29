@@ -1,14 +1,13 @@
-name: flutter_structure_generator
+name: flusgen
 description: A CLI tool for generating folder structures for Flutter projects
-version: 1.0.2
+version: 1.0.3
 
 environment:
   sdk: ^3.6.0
 
 executables:
-  flutter_structure_generator: flutter_structure_generator.dart
+  flusgen: flusgen.dart
 
-# Add regular dependencies here.
 dependencies:
   args: ^2.6.0
   flutter_test:

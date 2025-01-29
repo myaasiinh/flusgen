@@ -1,6 +1,6 @@
-# Flutter Structure Generator
+# FlusGen
 
-`flutter_structure_generator` adalah alat yang membantu Anda membuat struktur folder dan file secara otomatis untuk proyek Flutter dengan pola arsitektur MVVM (Model-View-ViewModel). Dengan menggunakan alat ini, Anda dapat dengan cepat menghasilkan folder dan file sesuai dengan struktur yang telah ditentukan, serta melakukan operasi seperti membuat folder/file kustom, mengganti nama folder/file, dan menghapusnya.
+`flusgen` adalah alat yang membantu Anda membuat struktur folder dan file secara otomatis untuk proyek Flutter dengan pola arsitektur MVVM (Model-View-ViewModel). Dengan menggunakan alat ini, Anda dapat dengan cepat menghasilkan folder dan file sesuai dengan struktur yang telah ditentukan, serta melakukan operasi seperti membuat folder/file kustom, mengganti nama folder/file, dan menghapusnya.
 
 ---
 
@@ -23,11 +23,11 @@ Proyek ini dirancang untuk memudahkan pengaturan struktur folder dan file dalam 
 
 ## 🚀 **Instalasi**
 
-### **1️⃣ Install Flutter Structure Generator**
+### **1️⃣ Install FlusGen**
 Jalankan perintah berikut di **Command Prompt (CMD)** untuk mengaktifkan package:
 
 ```bash
-dart pub global activate flutter_structure_generator
+dart pub global activate flusgen
 ```
 
 ---
@@ -64,67 +64,67 @@ Berikut adalah daftar perintah yang dapat digunakan:
 ### **🔹 1. Generate Struktur Default**
 Membuat struktur folder dan file default:
 ```bash
-flutter_structure_generator generate-structure
+flusgen generate-structure
 ```
 
 ### **🔹 2. Buat Folder Kustom**
 Membuat folder kustom setelah struktur default (Gantilah `<folderPath>` dengan path folder yang ingin dibuat):
 ```bash
-flutter_structure_generator create-custom-folder <folderPath>
+flusgen create-custom-folder <folderPath>
 ```
 📌 **Contoh:**
 ```bash
-flutter_structure_generator create-custom-folder lib/features/authentication
+flusgen create-custom-folder lib/features/authentication
 ```
 
 ### **🔹 3. Ganti Nama Folder**
 Mengganti nama folder yang sudah ada:
 ```bash
-flutter_structure_generator rename-folder <oldPath> <newPath>
+flusgen rename-folder <oldPath> <newPath>
 ```
 📌 **Contoh:**
 ```bash
-flutter_structure_generator rename-folder lib/features/authentication lib/features/login
+flusgen rename-folder lib/features/authentication lib/features/login
 ```
 
 ### **🔹 4. Hapus Folder**
 Menghapus folder dari struktur proyek:
 ```bash
-flutter_structure_generator delete-folder <folderPath>
+flusgen delete-folder <folderPath>
 ```
 📌 **Contoh:**
 ```bash
-flutter_structure_generator delete-folder lib/features/login
+flusgen delete-folder lib/features/login
 ```
 
 ### **🔹 5. Buat File Kustom**
 Membuat file kustom di dalam folder tertentu:
 ```bash
-flutter_structure_generator create-custom-file <filePath> [content]
+flusgen create-custom-file <filePath> [content]
 ```
 📌 **Contoh:**
 ```bash
-flutter_structure_generator create-custom-file lib/features/authentication/auth_service.dart
+flusgen create-custom-file lib/features/authentication/auth_service.dart
 ```
 
 ### **🔹 6. Ganti Nama File**
 Mengganti nama file dalam struktur proyek:
 ```bash
-flutter_structure_generator rename-file <oldPath> <newPath>
+flusgen rename-file <oldPath> <newPath>
 ```
 📌 **Contoh:**
 ```bash
-flutter_structure_generator rename-file lib/features/authentication/auth_service.dart lib/features/authentication/login_service.dart
+flusgen rename-file lib/features/authentication/auth_service.dart lib/features/authentication/login_service.dart
 ```
 
 ### **🔹 7. Hapus File**
 Menghapus file dari struktur proyek:
 ```bash
-flutter_structure_generator delete-file <filePath>
+flusgen delete-file <filePath>
 ```
 📌 **Contoh:**
 ```bash
-flutter_structure_generator delete-file lib/features/authentication/auth_service.dart
+flusgen delete-file lib/features/authentication/auth_service.dart
 ```
 
 ---
@@ -134,43 +134,43 @@ flutter_structure_generator delete-file lib/features/authentication/auth_service
 ### ✅ **1. Generate Default Structure**
 Untuk menghasilkan struktur folder dan file default:
 ```bash
-flutter_structure_generator generate-structure
+flusgen generate-structure
 ```
 
 ### ✅ **2. Create Custom Folder**
 Menambahkan folder kustom ke dalam struktur yang telah dibuat:
 ```bash
-flutter_structure_generator create-custom-folder lib/features/authentication
+flusgen create-custom-folder lib/features/authentication
 ```
 
 ### ✅ **3. Rename Folder**
 Mengganti nama folder dari `authentication` menjadi `login`:
 ```bash
-flutter_structure_generator rename-folder lib/features/authentication lib/features/login
+flusgen rename-folder lib/features/authentication lib/features/login
 ```
 
 ### ✅ **4. Delete Folder**
 Menghapus folder yang tidak diperlukan:
 ```bash
-flutter_structure_generator delete-folder lib/features/login
+flusgen delete-folder lib/features/login
 ```
 
 ### ✅ **5. Create Custom File**
 Membuat file kustom dalam struktur proyek:
 ```bash
-flutter_structure_generator create-custom-file lib/features/authentication/auth_service.dart
+flusgen create-custom-file lib/features/authentication/auth_service.dart
 ```
 
 ### ✅ **6. Rename File**
 Mengganti nama file `auth_service.dart` menjadi `login_service.dart`:
 ```bash
-flutter_structure_generator rename-file lib/features/authentication/auth_service.dart lib/features/authentication/login_service.dart
+flusgen rename-file lib/features/authentication/auth_service.dart lib/features/authentication/login_service.dart
 ```
 
 ### ✅ **7. Delete File**
 Menghapus file yang sudah tidak dibutuhkan:
 ```bash
-flutter_structure_generator delete-file lib/features/authentication/auth_service.dart
+flusgen delete-file lib/features/authentication/auth_service.dart
 ```
 
 ---
@@ -190,4 +190,12 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 
 ---
 
-**🎉 Selamat menggunakan `flutter_structure_generator`! Jika ada pertanyaan, jangan ragu untuk bertanya! 🚀**
+**🎉 Selamat menggunakan `flusgen`! Jika ada pertanyaan, jangan ragu untuk bertanya! 🚀**
+
+---
+
+### 🚧 Maintainer
+
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://myaasiinh.github.io)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-orange?style=flat-square&logo=ko-fi)](https://ko-fi.com/myaasiinh)
+

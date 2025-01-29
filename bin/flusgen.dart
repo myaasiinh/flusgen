@@ -1,7 +1,6 @@
 import 'dart:io';
-import 'package:flutter_structure_generator/src/config/structure_config.dart';
-import 'package:flutter_structure_generator/src/generators/file_generator.dart';
-import 'package:flutter_structure_generator/src/generators/folder_generator.dart';
+import 'package:flusgen/flusgen.dart';
+
 
 /// Entry point program.
 void main(List<String> arguments) {
