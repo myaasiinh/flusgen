@@ -10,9 +10,9 @@ void createFolders(Map<String, dynamic> structure, String basePath) {
     if (value is Map<String, dynamic>) {
       createFolders(value, path);
     } else if (value is List<String>) {
-      value.forEach((fileName) {
+      for (var fileName in value) {
         File('$path/$fileName').createSync(recursive: true);
-      });
+      }
     }
   });
 }

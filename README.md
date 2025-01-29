@@ -18,26 +18,11 @@ Proyek ini dirancang untuk memudahkan pengaturan struktur folder dan file dalam 
 
 ## Instalasi
 
-1. **Clone Repository**  
-   Clone repository ini ke komputer lokal Anda:
+  **Activate**  
+   Terminal Vscode Project Flutter Anda:
    ```
-   git clone https://github.com/username/flutter_structure_generator.git
+   dart pub global activate flutter_structure_generator
    ```
-
-2. **Masuk ke direktori proyek**  
-   Pindah ke folder proyek yang telah di-clone:
-   ```
-   cd flutter_structure_generator
-   ```
-
-3. **Aktifkan package menggunakan Flutter**  
-   Jalankan perintah untuk mengaktifkan package ini secara global:
-   ```
-   flutter pub global activate --source path .
-   ```
-
-4. **Tambahkan `flutter_structure_generator` ke PATH**  
-   Pastikan direktori Pub Cache (`C:\Users\your_username\AppData\Local\Pub\Cache\bin`) sudah ditambahkan ke environment `PATH` di sistem Anda agar dapat menjalankan perintah dari terminal.
 
 ## Perintah yang Tersedia
 
@@ -46,43 +31,43 @@ Berikut adalah daftar perintah yang dapat digunakan:
 - **generate-structure**  
   Membuat struktur folder dan file default.
   ```bash
-  flutter pub global run flutter_structure_generator generate-structure
+  flutter pub run flutter_structure_generator generate-structure
   ```
 
 - **create-custom-folder**  
   Membuat folder kustom setelah struktur default. Gantilah `<folderPath>` dengan path folder yang ingin dibuat.
   ```
-  flutter pub global run flutter_structure_generator create-custom-folder <folderPath>
+  flutter pub run flutter_structure_generator create-custom-folder <folderPath>
   ```
 
 - **rename-folder**  
   Mengganti nama folder. Gantilah `<oldPath>` dengan nama folder lama dan `<newPath>` dengan nama folder baru.
   ```
-  flutter pub global run flutter_structure_generator rename-folder <oldPath> <newPath>
+  flutter pub run flutter_structure_generator rename-folder <oldPath> <newPath>
   ```
 
 - **delete-folder**  
   Menghapus folder dari struktur proyek.
   ```bash
-  flutter pub global run flutter_structure_generator delete-folder <folderPath>
+  flutter pub run flutter_structure_generator delete-folder <folderPath>
   ```
 
 - **create-custom-file**  
   Membuat file kustom. Gantilah `<filePath>` dengan path file yang ingin dibuat, dan Anda bisa menambahkan konten file.
   ```
-  flutter pub global run flutter_structure_generator create-custom-file <filePath> [content]
+  flutter pub run flutter_structure_generator create-custom-file <filePath> [content]
   ```
 
 - **rename-file**  
   Mengganti nama file. Gantilah `<oldPath>` dengan path file lama dan `<newPath>` dengan path file baru.
   ```
-  flutter pub global run flutter_structure_generator rename-file <oldPath> <newPath>
+  flutter pub run flutter_structure_generator rename-file <oldPath> <newPath>
   ```
 
 - **delete-file**  
   Menghapus file dari struktur proyek.
   ```
-  flutter pub global run flutter_structure_generator delete-file <filePath>
+  flutter pub run flutter_structure_generator delete-file <filePath>
   ```
 
 ## Use Cases
@@ -90,44 +75,44 @@ Berikut adalah daftar perintah yang dapat digunakan:
 ### 1. Generate Default Structure
 Untuk menghasilkan struktur folder dan file default sesuai dengan template yang sudah ditentukan, Anda dapat menjalankan perintah berikut:
 ```
-flutter pub global run flutter_structure_generator generate-structure
+flutter pub run flutter_structure_generator generate-structure
 ```
 
 ### 2. Create Custom Folder
 Jika Anda perlu menambahkan folder kustom ke dalam struktur yang telah dibuat, gunakan perintah `create-custom-folder`:
 ```
-flutter pub global run flutter_structure_generator create-custom-folder lib/features/authentication
+flutter pub run flutter_structure_generator create-custom-folder lib/features/authentication
 ```
 Perintah ini akan membuat folder `authentication` di dalam folder `lib/features/`.
 
 ### 3. Rename Folder
 Jika Anda ingin mengganti nama folder di dalam struktur proyek, misalnya mengganti nama folder `authentication` menjadi `login`, Anda bisa menggunakan perintah `rename-folder`:
 ```
-flutter pub global run flutter_structure_generator rename-folder lib/features/authentication lib/features/login
+flutter pub run flutter_structure_generator rename-folder lib/features/authentication lib/features/login
 ```
 
 ### 4. Delete Folder
 Jika Anda ingin menghapus folder yang tidak diperlukan, gunakan perintah `delete-folder`:
 ```
-flutter pub global run flutter_structure_generator delete-folder lib/features/login
+flutter pub run flutter_structure_generator delete-folder lib/features/login
 ```
 
 ### 5. Create Custom File
 Untuk membuat file kustom di dalam folder yang sudah ada, gunakan perintah `create-custom-file`:
 ```
-flutter pub global run flutter_structure_generator create-custom-file lib/features/authentication/auth_service.dart
+flutter pub run flutter_structure_generator create-custom-file lib/features/authentication/auth_service.dart
 ```
 
 ### 6. Rename File
 Jika Anda ingin mengganti nama file, misalnya mengganti nama `auth_service.dart` menjadi `login_service.dart`, Anda dapat menggunakan perintah `rename-file`:
 ```
-flutter pub global run flutter_structure_generator rename-file lib/features/authentication/auth_service.dart lib/features/authentication/login_service.dart
+flutter pub run flutter_structure_generator rename-file lib/features/authentication/auth_service.dart lib/features/authentication/login_service.dart
 ```
 
 ### 7. Delete File
 Untuk menghapus file yang sudah tidak dibutuhkan, gunakan perintah `delete-file`:
 ```
-flutter pub global run flutter_structure_generator delete-file lib/features/authentication/auth_service.dart
+flutter pub run flutter_structure_generator delete-file lib/features/authentication/auth_service.dart
 ```
 
 ## Kontribusi

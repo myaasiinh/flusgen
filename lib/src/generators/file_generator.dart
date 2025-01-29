@@ -24,9 +24,9 @@ void generateFiles(Map<String, dynamic> structure, String basePath) {
       Directory(path).createSync(recursive: true);
       generateFiles(value, path);
     } else if (value is List<String>) {
-      value.forEach((fileName) {
+      for (var fileName in value) {
         createFile('$path/$fileName');
-      });
+      }
     }
   });
 }
