@@ -12,7 +12,7 @@ This project is designed to simplify the setup of folder and file structures in 
 
 ### ✨ **Key Features**  
 - ✅ **Generate Structure**: Automatically create a default folder and file structure based on predefined templates.  
-- ✅ **Generate from File**: Create a custom folder and file structure based on a `.txt` file.  
+- ✅ **Generate from File**: Create a custom folder and file structure based on a `.json` file.  
 - ✅ **Create Custom Folder**: Add custom folders after generating the default structure.  
 - ✅ **Rename Folder**: Rename existing folders within the project structure.  
 - ✅ **Delete Folder**: Remove folders from the project structure.  
@@ -125,31 +125,44 @@ flusgen delete-file lib/features/authentication/auth_service.dart
 ```  
 
 ### **🔹 8. Generate Structure from a File**  
-Generates a folder and file structure based on a `.txt` file, allowing for customization without relying on built-in templates.  
+Generates a folder and file structure based on a `.json` file, allowing for customization without relying on built-in templates.  
 ```bash
-flusgen generate-structure-from-file <filePath>
+flusgen generate-structure-from-json <filePath>
 ```  
 📌 **Example:**  
 ```bash
-flusgen generate-structure-from-file structure.txt
+flusgen generate-structure-from-json structure.json lib
 ```  
 
-#### **📄 File Format (`.txt`)**  
+#### **📄 File Format (`.json`)**  
 ```
-lib/
-  core/
-    config/
-      main_app.dart
-  features/
-    authentication/
-      controller/
-        auth_controller.dart
-      widget/
-        login_button.dart
+{
+  "lib": {
+    "core": {
+      "config": ["main_app.dart"],
+      "global_component": ["global_widget.dart"],
+      "constants": ["string.dart", "color.dart", "images.dart"],
+      "utils": ["route_utils.dart"]
+    },
+    "data": {
+      "data1": {
+        "requests_model": ["data1_requests_model.dart"],
+        "responses_model": ["data1_responses_model.dart"],
+        "datasource": ["data1_data_source.dart"],
+        "repository": ["data1_repository.dart"],
+        "viewdatamodel": ["data1_view_datamodel.dart"]
+      }
+    },
+    "features": {
+      "features1": {
+        "": ["features_screen.dart"],
+        "widget": ["features1_widget.dart"],
+        "controller": ["features_controller.dart"]
+      }
+    }
+  }
+}
 ```  
-- Use `/` to indicate folders.  
-- Use indentation to define hierarchy.  
-- Empty lines are ignored.  
 
 ---  
 
@@ -198,9 +211,9 @@ flusgen delete-file lib/features/authentication/auth_service.dart
 ```  
 
 ### ✅ **8. Generate Structure from a File**  
-Generate a custom folder and file structure from a `.txt` file:  
+Generate a custom folder and file structure from a `.json` file:  
 ```bash
-flusgen generate-structure-from-file structure.txt
+flusgen generate-structure-from-json structure.json lib
 ```
 
 ---  

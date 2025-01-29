@@ -1,37 +1,39 @@
+import 'dart:convert';
 import 'dart:io';
 
-void generateStructureFromFile(String filePath, String basePath) {
-  final file = File(filePath);
+void generateStructureFromJson(String jsonFilePath, String basePath) {
+  final file = File(jsonFilePath);
 
   if (!file.existsSync()) {
-    print('Error: File not found: $filePath');
+    print('Error: File not found: $jsonFilePath');
     return;
   }
 
-  final lines = file.readAsLinesSync();
-  for (final line in lines) {
-    final trimmedLine = line.trim();
-    
-    if (trimmedLine.isEmpty) continue; // Skip baris kosong
-    
-    final fullPath = '$basePath/$trimmedLine';
+  final jsonString = file.readAsStringSync();
+  final Map<String, dynamic> structure = jsonDecode(jsonString);  // Decode the JSON into a Map
 
-    if (trimmedLine.endsWith('/')) {
-      // If it's a folder, create it
-      final folderPath = fullPath;  // Ensuring proper folder path
-      if (!Directory(folderPath).existsSync()) {
-        Directory(folderPath).createSync();
-        print('Custom folder created: $folderPath');
-      }
-    } else {
-      // If it's a file, create it
-      final filePath = fullPath; // Ensuring proper file path
-      if (!File(filePath).existsSync()) {
+  // Start recursive function to create the structure
+  createStructure(structure, basePath);
+
+  print('Custom structure generated successfully from $jsonFilePath!');
+}
+
+void createStructure(Map<String, dynamic> structure, String currentPath) {
+  structure.forEach((key, value) {
+    final newPath = '$currentPath/$key';
+
+    if (value is Map) {
+      // If value is a map, it's a folder, create the folder and recurse
+      Directory(newPath).createSync(recursive: true);
+      print('Folder created: $newPath');
+      createStructure(Map<String, dynamic>.from(value), newPath);  // Recurse into the sub-folder
+    } else if (value is List) {
+      // If value is a list, it's a file, create the files in the folder
+      for (var fileName in value) {
+        final filePath = '$newPath/$fileName';
         File(filePath).createSync(recursive: true);
-        print('Custom file created: $filePath');
+        print('File created: $filePath');
       }
     }
-  }
-
-  print('Custom structure generated successfully from $filePath!');
+  });
 }

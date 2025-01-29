@@ -25,7 +25,7 @@ void main(List<String> arguments) {
         return;
       }
       final filePath = arguments[1];
-      generateStructureFromFile(filePath, basePath);
+      generateStructureFromJson(filePath, basePath);
       break;
 
     case 'create-custom-folder':
