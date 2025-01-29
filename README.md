@@ -19,11 +19,6 @@ This project is designed to simplify the setup of folder and file structures in 
 - ✅ **Create Custom File**: Add custom files within the project structure.  
 - ✅ **Rename File**: Rename existing files within the project structure.  
 - ✅ **Delete File**: Remove files from the project structure.
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> 5e5ccd318796adbb9702f4e5866c9ceaee2fff19
 ---  
 
 ## 🚀 **Installation**  
