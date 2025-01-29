@@ -11,6 +11,8 @@
 - Users can now manually specify the structure instead of relying on the default template.
 - Improved error handling for file operations (e.g., missing files).
 
+## 1.0.4 - Fix Documentation
+- Fix Documentation
 
 
 
