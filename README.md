@@ -2,128 +2,192 @@
 
 `flutter_structure_generator` adalah alat yang membantu Anda membuat struktur folder dan file secara otomatis untuk proyek Flutter dengan pola arsitektur MVVM (Model-View-ViewModel). Dengan menggunakan alat ini, Anda dapat dengan cepat menghasilkan folder dan file sesuai dengan struktur yang telah ditentukan, serta melakukan operasi seperti membuat folder/file kustom, mengganti nama folder/file, dan menghapusnya.
 
-## Deskripsi Proyek
+---
+
+## 📌 **Deskripsi Proyek**
 
 Proyek ini dirancang untuk memudahkan pengaturan struktur folder dan file dalam proyek Flutter. Dengan menggunakan alat ini, Anda dapat menghasilkan struktur folder dan file yang konsisten dan mengikuti pola arsitektur tertentu (seperti MVVM). Selain itu, Anda dapat melakukan kustomisasi terhadap struktur yang sudah ada dengan menambah, mengganti nama, atau menghapus folder dan file.
 
-## Fitur Utama
+---
 
-- **Generate Structure**: Membuat struktur folder dan file default sesuai dengan template yang telah ditentukan.
-- **Create Custom Folder**: Membuat folder kustom setelah struktur default.
-- **Rename Folder**: Mengganti nama folder di dalam struktur proyek.
-- **Delete Folder**: Menghapus folder dalam struktur proyek.
-- **Create Custom File**: Membuat file kustom setelah struktur default.
-- **Rename File**: Mengganti nama file dalam struktur proyek.
-- **Delete File**: Menghapus file dalam struktur proyek.
+## ✨ **Fitur Utama**
+- ✅ **Generate Structure**: Membuat struktur folder dan file default sesuai dengan template yang telah ditentukan.
+- ✅ **Create Custom Folder**: Membuat folder kustom setelah struktur default.
+- ✅ **Rename Folder**: Mengganti nama folder di dalam struktur proyek.
+- ✅ **Delete Folder**: Menghapus folder dalam struktur proyek.
+- ✅ **Create Custom File**: Membuat file kustom setelah struktur default.
+- ✅ **Rename File**: Mengganti nama file dalam struktur proyek.
+- ✅ **Delete File**: Menghapus file dalam struktur proyek.
 
-## Instalasi
+---
 
-  **Activate**  
-   Terminal Vscode Project Flutter Anda:
-   ```
-   dart pub global activate flutter_structure_generator
-   ```
+## 🚀 **Instalasi**
 
-## Perintah yang Tersedia
+### **1️⃣ Install Flutter Structure Generator**
+Jalankan perintah berikut di **Command Prompt (CMD)** untuk mengaktifkan package:
 
+```bash
+dart pub global activate flutter_structure_generator
+```
+
+---
+
+### **2️⃣ Konfigurasi PATH**
+Agar perintah dapat dijalankan secara global, tambahkan direktori berikut ke dalam `PATH` environment variable Anda:
+
+```
+C:\Users\myaasiinh\AppData\Local\Pub\Cache\bin
+```
+
+#### **Langkah-langkah Menambahkan PATH di Windows**
+1. **Buka Environment Variables:**
+   - Tekan `Win + S` dan cari **"Environment Variables"**.
+   - Klik **Edit the system environment variables**.
+   - Pada jendela **System Properties**, klik tombol **Environment Variables**.
+
+2. **Tambahkan PATH:**
+   - Pada bagian **System Variables**, cari variabel bernama `Path`, lalu klik **Edit**.
+   - Klik tombol **New**, lalu masukkan:
+     ```plaintext
+     C:\Users\myaasiinh\AppData\Local\Pub\Cache\bin
+     ```
+   - Klik **OK** untuk menyimpan perubahan.
+
+3. **Restart Terminal atau IDE:**
+   - Tutup terminal (Command Prompt, PowerShell, atau terminal di VS Code) dan buka kembali agar konfigurasi diterapkan.
+
+---
+
+## 🛠 **Perintah yang Tersedia**
 Berikut adalah daftar perintah yang dapat digunakan:
 
-- **generate-structure**  
-  Membuat struktur folder dan file default.
-  ```bash
-  flutter pub run flutter_structure_generator generate-structure
-  ```
-
-- **create-custom-folder**  
-  Membuat folder kustom setelah struktur default. Gantilah `<folderPath>` dengan path folder yang ingin dibuat.
-  ```
-  flutter pub run flutter_structure_generator create-custom-folder <folderPath>
-  ```
-
-- **rename-folder**  
-  Mengganti nama folder. Gantilah `<oldPath>` dengan nama folder lama dan `<newPath>` dengan nama folder baru.
-  ```
-  flutter pub run flutter_structure_generator rename-folder <oldPath> <newPath>
-  ```
-
-- **delete-folder**  
-  Menghapus folder dari struktur proyek.
-  ```bash
-  flutter pub run flutter_structure_generator delete-folder <folderPath>
-  ```
-
-- **create-custom-file**  
-  Membuat file kustom. Gantilah `<filePath>` dengan path file yang ingin dibuat, dan Anda bisa menambahkan konten file.
-  ```
-  flutter pub run flutter_structure_generator create-custom-file <filePath> [content]
-  ```
-
-- **rename-file**  
-  Mengganti nama file. Gantilah `<oldPath>` dengan path file lama dan `<newPath>` dengan path file baru.
-  ```
-  flutter pub run flutter_structure_generator rename-file <oldPath> <newPath>
-  ```
-
-- **delete-file**  
-  Menghapus file dari struktur proyek.
-  ```
-  flutter pub run flutter_structure_generator delete-file <filePath>
-  ```
-
-## Use Cases
-
-### 1. Generate Default Structure
-Untuk menghasilkan struktur folder dan file default sesuai dengan template yang sudah ditentukan, Anda dapat menjalankan perintah berikut:
-```
-flutter pub run flutter_structure_generator generate-structure
+### **🔹 1. Generate Struktur Default**
+Membuat struktur folder dan file default:
+```bash
+flutter_structure_generator generate-structure
 ```
 
-### 2. Create Custom Folder
-Jika Anda perlu menambahkan folder kustom ke dalam struktur yang telah dibuat, gunakan perintah `create-custom-folder`:
+### **🔹 2. Buat Folder Kustom**
+Membuat folder kustom setelah struktur default (Gantilah `<folderPath>` dengan path folder yang ingin dibuat):
+```bash
+flutter_structure_generator create-custom-folder <folderPath>
 ```
-flutter pub run flutter_structure_generator create-custom-folder lib/features/authentication
-```
-Perintah ini akan membuat folder `authentication` di dalam folder `lib/features/`.
-
-### 3. Rename Folder
-Jika Anda ingin mengganti nama folder di dalam struktur proyek, misalnya mengganti nama folder `authentication` menjadi `login`, Anda bisa menggunakan perintah `rename-folder`:
-```
-flutter pub run flutter_structure_generator rename-folder lib/features/authentication lib/features/login
+📌 **Contoh:**
+```bash
+flutter_structure_generator create-custom-folder lib/features/authentication
 ```
 
-### 4. Delete Folder
-Jika Anda ingin menghapus folder yang tidak diperlukan, gunakan perintah `delete-folder`:
+### **🔹 3. Ganti Nama Folder**
+Mengganti nama folder yang sudah ada:
+```bash
+flutter_structure_generator rename-folder <oldPath> <newPath>
 ```
-flutter pub run flutter_structure_generator delete-folder lib/features/login
-```
-
-### 5. Create Custom File
-Untuk membuat file kustom di dalam folder yang sudah ada, gunakan perintah `create-custom-file`:
-```
-flutter pub run flutter_structure_generator create-custom-file lib/features/authentication/auth_service.dart
+📌 **Contoh:**
+```bash
+flutter_structure_generator rename-folder lib/features/authentication lib/features/login
 ```
 
-### 6. Rename File
-Jika Anda ingin mengganti nama file, misalnya mengganti nama `auth_service.dart` menjadi `login_service.dart`, Anda dapat menggunakan perintah `rename-file`:
+### **🔹 4. Hapus Folder**
+Menghapus folder dari struktur proyek:
+```bash
+flutter_structure_generator delete-folder <folderPath>
 ```
-flutter pub run flutter_structure_generator rename-file lib/features/authentication/auth_service.dart lib/features/authentication/login_service.dart
-```
-
-### 7. Delete File
-Untuk menghapus file yang sudah tidak dibutuhkan, gunakan perintah `delete-file`:
-```
-flutter pub run flutter_structure_generator delete-file lib/features/authentication/auth_service.dart
+📌 **Contoh:**
+```bash
+flutter_structure_generator delete-folder lib/features/login
 ```
 
-## Kontribusi
+### **🔹 5. Buat File Kustom**
+Membuat file kustom di dalam folder tertentu:
+```bash
+flutter_structure_generator create-custom-file <filePath> [content]
+```
+📌 **Contoh:**
+```bash
+flutter_structure_generator create-custom-file lib/features/authentication/auth_service.dart
+```
 
-Jika Anda ingin berkontribusi pada proyek ini, silakan buat pull request. Berikut adalah langkah-langkah umum untuk berkontribusi:
+### **🔹 6. Ganti Nama File**
+Mengganti nama file dalam struktur proyek:
+```bash
+flutter_structure_generator rename-file <oldPath> <newPath>
+```
+📌 **Contoh:**
+```bash
+flutter_structure_generator rename-file lib/features/authentication/auth_service.dart lib/features/authentication/login_service.dart
+```
 
-1. Fork repository ini.
-2. Buat branch baru untuk perubahan Anda.
-3. Lakukan perubahan dan pastikan bahwa kode Anda berjalan dengan baik.
-4. Kirim pull request untuk menggabungkan perubahan Anda.
+### **🔹 7. Hapus File**
+Menghapus file dari struktur proyek:
+```bash
+flutter_structure_generator delete-file <filePath>
+```
+📌 **Contoh:**
+```bash
+flutter_structure_generator delete-file lib/features/authentication/auth_service.dart
+```
 
-## Lisensi
+---
 
+## 🎯 **Use Cases**
+
+### ✅ **1. Generate Default Structure**
+Untuk menghasilkan struktur folder dan file default:
+```bash
+flutter_structure_generator generate-structure
+```
+
+### ✅ **2. Create Custom Folder**
+Menambahkan folder kustom ke dalam struktur yang telah dibuat:
+```bash
+flutter_structure_generator create-custom-folder lib/features/authentication
+```
+
+### ✅ **3. Rename Folder**
+Mengganti nama folder dari `authentication` menjadi `login`:
+```bash
+flutter_structure_generator rename-folder lib/features/authentication lib/features/login
+```
+
+### ✅ **4. Delete Folder**
+Menghapus folder yang tidak diperlukan:
+```bash
+flutter_structure_generator delete-folder lib/features/login
+```
+
+### ✅ **5. Create Custom File**
+Membuat file kustom dalam struktur proyek:
+```bash
+flutter_structure_generator create-custom-file lib/features/authentication/auth_service.dart
+```
+
+### ✅ **6. Rename File**
+Mengganti nama file `auth_service.dart` menjadi `login_service.dart`:
+```bash
+flutter_structure_generator rename-file lib/features/authentication/auth_service.dart lib/features/authentication/login_service.dart
+```
+
+### ✅ **7. Delete File**
+Menghapus file yang sudah tidak dibutuhkan:
+```bash
+flutter_structure_generator delete-file lib/features/authentication/auth_service.dart
+```
+
+---
+
+## 🤝 **Kontribusi**
+Jika Anda ingin berkontribusi pada proyek ini, silakan buat **pull request**. Berikut adalah langkah-langkahnya:
+
+1. **Fork repository** ini.
+2. Buat **branch baru** untuk perubahan Anda.
+3. Lakukan perubahan dan pastikan kode Anda berjalan dengan baik.
+4. Kirim **pull request** untuk menggabungkan perubahan Anda.
+
+---
+
+## 📜 **Lisensi**
 Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+---
+
+**🎉 Selamat menggunakan `flutter_structure_generator`! Jika ada pertanyaan, jangan ragu untuk bertanya! 🚀**

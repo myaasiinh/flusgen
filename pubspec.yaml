@@ -1,6 +1,6 @@
 name: flutter_structure_generator
 description: A CLI tool for generating folder structures for Flutter projects
-version: 1.0.1
+version: 1.0.2
 
 environment:
   sdk: ^3.6.0

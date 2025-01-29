@@ -4,3 +4,6 @@
 ## 1.0.1 - Update Docs release
 - Update Docs Using.
 
+## 1.0.2 - Update Docs release
+- Update Docs Using.
+
