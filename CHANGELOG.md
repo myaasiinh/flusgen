@@ -18,3 +18,12 @@
 - Users can now specify the folder structure in JSON format, providing more flexibility for complex structures.
 - Improved command handling for JSON-based input and automatic creation of folders and files based on JSON-defined paths.
 - Updated documentation to include usage instructions for JSON-based structure generation.
+
+## 1.0.6 - Improved CLI Descriptions and Command Usage Messages
+- Enhanced CLI startup message with a clear description of **FlusGen** and its purpose.
+- Added **detailed command descriptions** to improve user experience and clarity.
+- Improved **error handling** for missing arguments in various commands.
+- Refined command usage messages to provide examples and better guidance.
+- Introduced **emoji indicators** to visually distinguish different command operations.
+- Updated documentation to reflect new improvements in command descriptions.
+
