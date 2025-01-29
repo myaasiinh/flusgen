@@ -1,6 +1,6 @@
 name: flusgen
 description: A CLI tool for generating folder structures for Flutter projects
-version: 1.0.3
+version: 1.0.0
 
 environment:
   sdk: ^3.6.0
