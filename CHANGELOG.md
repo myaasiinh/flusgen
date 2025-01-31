@@ -27,3 +27,11 @@
 - Introduced **emoji indicators** to visually distinguish different command operations.
 - Updated documentation to reflect new improvements in command descriptions.
 
+## 1.0.7 - Language Support and Localization Improvements
+- Updated the tool to support multiple languages.
+- Translated the CLI startup message and command descriptions into English.
+- Improved the user experience by offering localized error messages and usage instructions.
+- Enhanced documentation with a section for language configuration and switching.
+
+## 1.0.8 - Update Demo & Screenshoot
+- Updated the tool to demo & screnshoot

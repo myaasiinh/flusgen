@@ -4,6 +4,18 @@
 
 ---  
 
+# Screenshoot Flusgen
+
+![Image](https://github.com/user-attachments/assets/7dcdab25-658c-4b95-a07b-04451d6970f3)
+
+---  
+
+# Demo Test Flusgen
+
+https://github.com/user-attachments/assets/c958ade2-50fc-4c3e-8df6-9b73591b4a86
+
+---  
+
 ## 📌 **Project Description**  
 
 This project is designed to simplify the setup of folder and file structures in Flutter projects. Using this tool, you can generate consistent folder and file structures following a specific architecture pattern (such as MVVM or Other). Additionally, you can customize the existing structure by adding, renaming, or deleting folders and files.  

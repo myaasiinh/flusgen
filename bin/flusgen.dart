@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flusgen/flusgen.dart';
 
-/// Entry point program.
+/// Entry point of the program.
 void main(List<String> arguments) {
   final basePath = Directory.current.path;
 
@@ -9,27 +9,27 @@ void main(List<String> arguments) {
     print('''
 FlusGen - Flutter Project Structure Generator
 =============================================
-FlusGen adalah alat untuk secara otomatis menghasilkan struktur folder dan file untuk proyek Flutter menggunakan pola MVVM atau arsitektur lainnya.
+FlusGen is a tool to automatically generate folder and file structures for Flutter projects using the MVVM pattern or other architectures.
 
 Usage:
   flusgen <command> [options]
 
 Commands:
-  generate-structure                : Membuat struktur folder dan file default untuk proyek Flutter.
-  generate-structure-from-file <path>: Membuat struktur berdasarkan file JSON yang ditentukan.
-  create-custom-folder <path>       : Membuat folder dengan path yang diberikan.
-  rename-folder <oldPath> <newPath> : Mengubah nama atau memindahkan folder.
-  delete-folder <path>              : Menghapus folder yang ditentukan.
-  create-custom-file <path> [content]: Membuat file dengan konten opsional.
-  rename-file <oldPath> <newPath>   : Mengubah nama atau memindahkan file.
-  delete-file <path>                : Menghapus file yang ditentukan.
+  generate-structure                : Creates the default folder and file structure for a Flutter project.
+  generate-structure-from-file <path>: Creates a structure based on the specified JSON file.
+  create-custom-folder <path>       : Creates a folder at the given path.
+  rename-folder <oldPath> <newPath> : Renames or moves a folder.
+  delete-folder <path>              : Deletes the specified folder.
+  create-custom-file <path> [content]: Creates a file with optional content.
+  rename-file <oldPath> <newPath>   : Renames or moves a file.
+  delete-file <path>                : Deletes the specified file.
 
-Contoh:
+Example:
   flusgen generate-structure
   flusgen generate-structure-from-file structure.json
   flusgen create-custom-folder lib/modules
 
-Jalankan perintah dengan argument yang sesuai untuk memulai.
+Run the command with the appropriate arguments to get started.
 ''');
     return;
   }
